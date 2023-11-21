@@ -1,6 +1,9 @@
-package com.deezghostingfy;
+package com.deezghostingfy.controlefxml;
 
 import java.io.IOException;
+
+import com.deezghostingfy.App;
+
 import javafx.fxml.FXML;
 
 public class PrimaryController {

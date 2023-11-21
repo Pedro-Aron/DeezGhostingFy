@@ -10,7 +10,7 @@ class Video:
 
 args = "+".join(sys.argv[1:])
 texto = requests.get("https://www.youtube.com/results?search_query="+args).text
-soup = bs4.BeautifulSoup(texto, 'lxml')
+soup = bs4.BeautifulSoup(texto, features="html.parser")
 scp = soup.find_all('script')[-6]
 json_texto = re.search('var ytInitialData = (.+)[,;]{1}', str(scp)).group(1)
 json_dados = json.loads(json_texto)
@@ -36,7 +36,7 @@ for dados in conteudo:
                 elif c=="thumbnail" and "thumbnails" in v:
                     if len(novoVideo) != 1:
                         continue
-                    novoVideo += [v['thumbnails'][1]['url']]
+                    novoVideo += [v['thumbnails'][0]['url']]
                 elif c=="title" and "runs" in v:
                     if len(novoVideo) != 2:
                         continue
@@ -44,8 +44,11 @@ for dados in conteudo:
                     videos += [Video(novoVideo[0], novoVideo[1], novoVideo[2])]
 
 
-with open("resultados.txt", 'w', encoding="utf-8") as saida:
+with open("deezghostingfy/src/main/java/com/deezghostingfy/pesquisa/resultados.txt", 'w', encoding="utf-8") as saida:
     for i in range(len(videos)):
         saida.write(videos[i].titulo+'\n')
         saida.write(videos[i].thumbnailUrl+'\n')
         saida.write(videos[i].videoId+'\n')
+
+
+print("termino")
