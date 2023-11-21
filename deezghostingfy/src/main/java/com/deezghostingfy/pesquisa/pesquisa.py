@@ -49,5 +49,3 @@ with open("resultados.txt", 'w', encoding="utf-8") as saida:
         saida.write(videos[i].titulo+'\n')
         saida.write(videos[i].thumbnailUrl+'\n')
         saida.write(videos[i].videoId+'\n')
-
-
