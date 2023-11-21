@@ -8,7 +8,8 @@ class Video:
         self.thumbnailUrl = url
         self.titulo = titulo
 
-texto = requests.get("https://www.youtube.com/results?search_query=radiohead").text
+args = "+".join(sys.argv[1:])
+texto = requests.get("https://www.youtube.com/results?search_query="+args).text
 soup = bs4.BeautifulSoup(texto, 'lxml')
 scp = soup.find_all('script')[-6]
 json_texto = re.search('var ytInitialData = (.+)[,;]{1}', str(scp)).group(1)

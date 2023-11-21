@@ -1,4 +1,4 @@
-package com.deezghostingfy;
+package com.deezghostingfy.controlefxml;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
