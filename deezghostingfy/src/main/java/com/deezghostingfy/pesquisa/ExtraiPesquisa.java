@@ -18,6 +18,8 @@ public class ExtraiPesquisa {
                 novoVideo[(i%3)-1] = leitor.nextLine();
         }
 
+        leitor.close();
+
         return videos;
     }
 }
