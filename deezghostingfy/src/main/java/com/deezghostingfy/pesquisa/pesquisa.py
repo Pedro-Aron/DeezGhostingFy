@@ -36,12 +36,10 @@ for dados in conteudo:
                 elif c=="thumbnail" and "thumbnails" in v:
                     if len(novoVideo) != 1:
                         continue
-
                     novoVideo += [v['thumbnails'][1]['url']]
                 elif c=="title" and "runs" in v:
                     if len(novoVideo) != 2:
                         continue
-
                     novoVideo += [v['runs'][0]['text']]
                     videos += [Video(novoVideo[0], novoVideo[1], novoVideo[2])]
 
