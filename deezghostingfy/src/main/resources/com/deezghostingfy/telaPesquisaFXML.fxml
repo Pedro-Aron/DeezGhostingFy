@@ -8,13 +8,13 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deezghostingfy.controlefxml.ControladoraTelaPesquisa">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deezghostingfy.controlefxml.ControladoraTelaPesquisa">
    <children>
-      <ScrollPane layoutX="297.0" layoutY="14.0" prefHeight="423.0" prefWidth="390.0">
+      <ScrollPane layoutX="297.0" layoutY="14.0" prefHeight="423.0" prefWidth="440.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <ListView fx:id="resultadoPesquisaListView" prefHeight="423.0" prefWidth="390.0" />
+                  <ListView fx:id="resultadoPesquisaListView" prefHeight="423.0" prefWidth="440.0" />
                </children>
             </AnchorPane>
         </content>

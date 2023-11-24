@@ -16,11 +16,19 @@ import com.deezghostingfy.pesquisa.Pesquisa;
 public class App extends Application {
 
     private static Scene scene;
+    private static Stage estagio;
 
     @Override public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("telaPesquisaFXML"), 640, 480);
+        scene = new Scene(loadFXML("telaPesquisaFXML"), 750, 450);
         stage.setScene(scene);
         stage.show();
+        estagio = stage;
+        //furto do stage para possibilitar redimensionamento da janela via código
+    }
+
+    public static void redimensiona(double l, double a) {
+        estagio.setHeight(a);
+        estagio.setWidth(l);
     }
 
     public static void setRoot(String fxml) throws IOException {

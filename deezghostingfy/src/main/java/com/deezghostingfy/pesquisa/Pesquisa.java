@@ -2,7 +2,6 @@ package com.deezghostingfy.pesquisa;
 
 import com.deezghostingfy.dados.Video;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.io.IOException;
@@ -11,6 +10,12 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
 public class Pesquisa {
+    private static ArrayList<Video> resultados;
+
+    public static ArrayList<Video> Resultado() {
+        return resultados;
+    }
+
     public static boolean RealizaPesquisa(String termos) throws IOException {
         ProcessBuilder processoBuilderPython = new ProcessBuilder("python", "deezghostingfy/src/main/java/com/deezghostingfy/pesquisa/pesquisa.py", termos);
         processoBuilderPython.redirectErrorStream(true);
@@ -62,6 +67,7 @@ public class Pesquisa {
             System.out.println(e.getMessage());
         }
 
+        resultados = videos;
         return videos;
     }
 }

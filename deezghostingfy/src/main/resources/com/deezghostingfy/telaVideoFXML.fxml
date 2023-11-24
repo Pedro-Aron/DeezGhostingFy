@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.web.WebView?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="396.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deezghostingfy.controlefxml.ControladoraTelaVideo">
+   <children>
+      <WebView fx:id="videoView" layoutX="5.0" layoutY="6.0" prefHeight="180.0" prefWidth="320.0" />
+      <Button fx:id="botaoCurtir" layoutX="5.0" layoutY="231.0" mnemonicParsing="false" onAction="#curtir" prefHeight="25.0" prefWidth="320.0" text="Curtir" />
+      <Button fx:id="voltarBotao" layoutX="5.0" layoutY="357.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="320.0" text="Voltar à tela de pesquisa" />
+      <Button fx:id="adicionarPlaylistBotao" layoutX="5.0" layoutY="311.0" mnemonicParsing="false" onAction="#adicionarPlaylist" prefHeight="25.0" prefWidth="320.0" text="Adicionar à playlist" />
+      <ChoiceBox fx:id="playlistCaixaSelecao" layoutX="5.0" layoutY="280.0" prefHeight="25.0" prefWidth="320.0" />
+      <Button fx:id="tocarBotao" layoutX="5.0" layoutY="198.0" mnemonicParsing="false" onAction="#tocar" prefHeight="25.0" prefWidth="320.0" text="Tocar" />
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</Pane>
