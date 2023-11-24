@@ -59,6 +59,7 @@ public class ControladoraTelaVideo {
 
     @FXML
     void voltar(ActionEvent event) {
+        videoView.getEngine().load(null);
         try {
             App.redimensiona(750, 450);
             App.setRoot("telaPesquisaFXML");
