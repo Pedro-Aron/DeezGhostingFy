@@ -27,6 +27,9 @@ public class ControladoraTelaPesquisa implements Initializable {
     private TextField pesquisaTextField;
 
     @FXML
+    private Button playlistsButton;
+
+    @FXML
     private Button pesquisarButton;
 
     @FXML
@@ -40,8 +43,7 @@ public class ControladoraTelaPesquisa implements Initializable {
 
         resultadoPesquisaListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<HBox>() {
 
-            @Override
-            public void changed(ObservableValue<? extends HBox> arg0, HBox arg1, HBox arg2) {
+            @Override public void changed(ObservableValue<? extends HBox> arg0, HBox arg1, HBox arg2) {
                 selecionado = resultadoPesquisaListView.getSelectionModel().getSelectedItem();
                 Label tituloSelecionado = (Label)(selecionado.getChildren().get(1));
                 ControladoraTelaVideo.EncontraVideoAtual(tituloSelecionado.getText());
@@ -77,6 +79,16 @@ public class ControladoraTelaPesquisa implements Initializable {
         HBox[] listaHBox = geraListaHBox(Pesquisa.ExtraiResultado());
         resultadoPesquisaListView.getItems().clear();
         resultadoPesquisaListView.getItems().addAll(listaHBox);
+    }
+
+    @FXML
+    void acessarPlaylists(ActionEvent event) {
+        try {
+            App.setRoot("telaPlaylistsFXML");
+        } catch (IOException ex) {
+            System.out.println("erro acessando tela de playlists");
+            System.out.println(ex.getMessage());
+        }
     }
 
     private static HBox[] geraListaHBox(ArrayList<Video> videos) {

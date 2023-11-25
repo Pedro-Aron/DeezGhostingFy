@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deezghostingfy.controlefxml.ControladoraTelaPlaylists">
+   <children>
+      <ScrollPane layoutX="296.0" layoutY="14.0" prefHeight="423.0" prefWidth="440.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ListView fx:id="playlistsListView" prefHeight="423.0" prefWidth="440.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Button fx:id="voltarPesquisaButton" layoutX="14.0" layoutY="412.0" mnemonicParsing="false" onAction="#voltarPesquisa" prefHeight="25.0" prefWidth="268.0" text="Voltar à Tela de Pesquisa" />
+      <Button fx:id="criarPlaylistButton" layoutX="14.0" layoutY="266.0" mnemonicParsing="false" onAction="#criarPlaylist" prefHeight="25.0" prefWidth="268.0" text="Criar Playlist" />
+      <TextField fx:id="novaPlaylistTextField" layoutX="14.0" layoutY="225.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="deletarTextField" layoutX="14.0" layoutY="81.0" prefHeight="25.0" prefWidth="268.0" />
+      <Button fx:id="deletarButton" layoutX="14.0" layoutY="116.0" mnemonicParsing="false" onAction="#deletar" prefHeight="25.0" prefWidth="268.0" text="Deletar Playlist" />
+   </children>
+</Pane>

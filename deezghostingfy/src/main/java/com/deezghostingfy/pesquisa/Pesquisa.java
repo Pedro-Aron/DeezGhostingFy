@@ -1,9 +1,11 @@
 package com.deezghostingfy.pesquisa;
 
 import com.deezghostingfy.dados.Video;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
