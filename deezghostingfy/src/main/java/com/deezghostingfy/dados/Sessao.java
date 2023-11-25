@@ -7,6 +7,11 @@ public class Sessao {
     private static ArrayList<Playlist> playlists;
     private static MusicasCurtidas musicasCurtidas;
 
+    public static void inicializa() {
+        playlists = new ArrayList<Playlist>();
+        musicasCurtidas = new MusicasCurtidas();
+    }
+
     public static ArrayList<Playlist> acessarPlaylists() {
         return playlists;
     }
@@ -57,5 +62,26 @@ public class Sessao {
             if (iterador.next().getNome().toLowerCase().contains(playlist.toLowerCase()))
                 iterador.remove();
         }
+    }
+
+    public static void adicionarMusicaCurtida(Video curtido) {
+        musicasCurtidas.addVideo(curtido);
+    }
+
+    public static String[] listaDeNomes() {
+        String[] lista = new String[playlists.size()];
+
+        for (int i = 0; i < playlists.size(); i++) 
+            lista[i] = playlists.get(i).getNome();
+
+        return lista;
+    }
+
+    public static void adicionarMusica(String playlist, Video musica) {
+        for (var pl: playlists) 
+            if (pl.getNome().equals(playlist)) {
+                pl.addVideo(musica);
+                break;
+            }
     }
 }

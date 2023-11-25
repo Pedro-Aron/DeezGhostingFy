@@ -35,7 +35,7 @@ public class ControladoraTelaRemocao implements Initializable {
     private HBox selecionado;
 
     @Override public void initialize(URL arg0, ResourceBundle arg1) {
-        HBox[] listaHBox = geraListaHbox();
+        HBox[] listaHBox = geraListaHbox(playlistAtual);
         videosPlaylistListView.getItems().addAll(listaHBox);
 
         videosPlaylistListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<HBox>() {
@@ -45,7 +45,7 @@ public class ControladoraTelaRemocao implements Initializable {
                 String musicaDeletada = ((Label) selecionado.getChildren().get(1)).getText();
                 Sessao.removerMusicaPlaylist(playlistAtual.getNome(), musicaDeletada);
 
-                HBox[] novaLista = geraListaHbox();
+                HBox[] novaLista = geraListaHbox(playlistAtual);
                 videosPlaylistListView.getItems().clear();
                 videosPlaylistListView.getItems().addAll(novaLista);
             }
@@ -66,11 +66,11 @@ public class ControladoraTelaRemocao implements Initializable {
 
     public static void EncontraPlaylistAtual(String playlist) {
         for (var pl: Sessao.acessarPlaylists()) 
-            if (pl.getNome().equals(playlist)) 
+            if (pl.getNome().toLowerCase().contains(playlist.toLowerCase())) 
                 playlistAtual = pl;
     }
 
-    private static HBox[] geraListaHbox() {
+    protected static HBox[] geraListaHbox(Playlist playlistAtual) {
         ArrayList<Video> videos = playlistAtual.acessarLista();
         HBox[] listaHBox = new HBox[videos.size()];
 

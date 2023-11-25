@@ -13,7 +13,7 @@
       <Button fx:id="voltarBotao" layoutX="5.0" layoutY="357.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="320.0" text="Voltar à tela de pesquisa" />
       <Button fx:id="adicionarPlaylistBotao" layoutX="5.0" layoutY="311.0" mnemonicParsing="false" onAction="#adicionarPlaylist" prefHeight="25.0" prefWidth="320.0" text="Adicionar à playlist" />
       <ChoiceBox fx:id="playlistCaixaSelecao" layoutX="5.0" layoutY="280.0" prefHeight="25.0" prefWidth="320.0" />
-      <Button fx:id="tocarBotao" layoutX="5.0" layoutY="198.0" mnemonicParsing="false" onAction="#tocar" prefHeight="25.0" prefWidth="320.0" text="Tocar" />
+      <Button fx:id="atualizarBotao" layoutX="5.0" layoutY="198.0" mnemonicParsing="false" onAction="#atualizar" prefHeight="25.0" prefWidth="320.0" text="Atualizar Playlists" />
    </children>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

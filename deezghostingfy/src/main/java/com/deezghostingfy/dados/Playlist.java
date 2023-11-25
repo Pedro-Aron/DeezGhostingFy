@@ -51,4 +51,12 @@ public class Playlist {
 
         return removeu;
     }
+
+    public int getIndex(String titulo) {
+        for (int i = 0; i < videos.size(); i++) 
+            if (videos.get(i).getTitulo().equals(titulo))
+                return i; 
+
+        return -1;
+    }
 }

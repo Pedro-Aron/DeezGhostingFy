@@ -2,19 +2,23 @@ package com.deezghostingfy.controlefxml;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.web.WebView;
 import javafx.scene.web.WebEngine;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
+import java.net.URL;
 
 import com.deezghostingfy.App;
 import com.deezghostingfy.dados.Video;
 import com.deezghostingfy.pesquisa.Pesquisa;
+import com.deezghostingfy.dados.Sessao;
 
 
-public class ControladoraTelaVideo {
+public class ControladoraTelaVideo implements Initializable {
     private static Video videoAtual;
 
     @FXML
@@ -24,16 +28,22 @@ public class ControladoraTelaVideo {
     private Button botaoCurtir;
 
     @FXML
-    private Button tocarBotao;
+    private Button atualizarBotao;
 
     @FXML
     private Button voltarBotao;
 
     @FXML
-    private ChoiceBox<?> playlistCaixaSelecao;
+    private ChoiceBox<String> playlistCaixaSelecao;
 
     @FXML
     private WebView videoView;
+
+    @Override public void initialize(URL arg0, ResourceBundle arg1) {
+        playlistCaixaSelecao.getItems().addAll(Sessao.listaDeNomes());
+        WebEngine engine = videoView.getEngine();
+        engine.load(videoAtual.getLink());
+    }
 
     public static void EncontraVideoAtual(String titulo) {
         for (var video: Pesquisa.Resultado()) 
@@ -42,19 +52,20 @@ public class ControladoraTelaVideo {
     }
 
     @FXML
-    void tocar(ActionEvent event) {
-        WebEngine engine = videoView.getEngine();
-        engine.load(videoAtual.getLink());
+    void atualizar(ActionEvent event) {
+        playlistCaixaSelecao.getItems().clear();
+        playlistCaixaSelecao.getItems().addAll(Sessao.listaDeNomes());
     }
 
     @FXML
     void adicionarPlaylist(ActionEvent event) {
-
+        String playlist = playlistCaixaSelecao.getValue();
+        Sessao.adicionarMusica(playlist, videoAtual);
     }
 
     @FXML
     void curtir(ActionEvent event) {
-
+        Sessao.adicionarMusicaCurtida(videoAtual);
     }
 
     @FXML

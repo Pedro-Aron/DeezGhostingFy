@@ -41,6 +41,12 @@ public class ControladoraTelaPlaylists implements Initializable {
     private Button deletarButton;
 
     @FXML
+    private Button gerenciarBotao;
+
+    @FXML
+    private TextField gerenciarTextField;
+
+    @FXML
     private TextField deletarTextField;
 
     private HBox selecionado;
@@ -55,13 +61,13 @@ public class ControladoraTelaPlaylists implements Initializable {
             @Override public void changed(ObservableValue<? extends HBox> arg0, HBox arg1, HBox arg2) {
                 selecionado = playlistsListView.getSelectionModel().getSelectedItem();
                 Label tituloSelecionado = (Label) selecionado.getChildren().get(1);
-                ControladoraTelaRemocao.EncontraPlaylistAtual(tituloSelecionado.getText());
-                App.redimensiona(468, 487);
+                ControladoraTelaTocaPlaylist.EncontraPlaylistAtual(tituloSelecionado.getText());
+                App.redimensiona(840, 450);
 
                 try {
-                    App.setRoot("telaRemocaoFXML");
+                    App.setRoot("telaTocaPlaylistFXML");
                 } catch (IOException ex) {
-                    System.out.println("erro abrindo tela de remocao");
+                    System.out.println("erro abrindo tela de tocaar playlist");
                     System.out.println(ex.getMessage());
                 }
             }
@@ -91,6 +97,21 @@ public class ControladoraTelaPlaylists implements Initializable {
         } catch (IOException e) {
             System.out.println("erro voltando da tela de playlists");
             System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    void gerenciarPlaylist(ActionEvent event) {
+        String playlist = gerenciarTextField.getText();
+        ControladoraTelaRemocao.EncontraPlaylistAtual(playlist);
+
+        App.redimensiona(469, 487);
+
+        try {
+            App.setRoot("telaRemocaoFXML");
+        } catch (IOException ex) {
+            System.out.println("erro abrindo tela de remocao");
+            System.out.println(ex.getMessage());
         }
     }
 
