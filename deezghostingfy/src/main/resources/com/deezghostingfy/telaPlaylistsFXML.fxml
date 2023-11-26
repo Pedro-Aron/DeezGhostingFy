@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deezghostingfy.controlefxml.ControladoraTelaPlaylists">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" styleClass="backgroundColor" stylesheets="@Style/css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deezghostingfy.controlefxml.ControladoraTelaPlaylists">
    <children>
       <ScrollPane layoutX="296.0" layoutY="14.0" prefHeight="423.0" prefWidth="440.0">
         <content>
@@ -18,12 +18,12 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Button fx:id="voltarPesquisaButton" layoutX="14.0" layoutY="412.0" mnemonicParsing="false" onAction="#voltarPesquisa" prefHeight="25.0" prefWidth="268.0" text="Voltar à Tela de Pesquisa" />
-      <Button fx:id="criarPlaylistButton" layoutX="14.0" layoutY="327.0" mnemonicParsing="false" onAction="#criarPlaylist" prefHeight="25.0" prefWidth="268.0" text="Criar Playlist" />
-      <TextField fx:id="novaPlaylistTextField" layoutX="14.0" layoutY="293.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="deletarTextField" layoutX="14.0" layoutY="177.0" prefHeight="25.0" prefWidth="268.0" />
-      <Button fx:id="deletarButton" layoutX="14.0" layoutY="213.0" mnemonicParsing="false" onAction="#deletar" prefHeight="25.0" prefWidth="268.0" text="Deletar Playlist" />
-      <TextField fx:id="gerenciarTextField" layoutX="14.0" layoutY="60.0" prefHeight="25.0" prefWidth="268.0" />
-      <Button fx:id="gerenciarBotao" layoutX="14.0" layoutY="94.0" mnemonicParsing="false" onAction="#gerenciarPlaylist" prefHeight="25.0" prefWidth="268.0" text="Gerenciar Playlist" />
+      <Button fx:id="voltarPesquisaButton" layoutX="14.0" layoutY="412.0" mnemonicParsing="false" onAction="#voltarPesquisa" prefHeight="25.0" prefWidth="268.0" style="-fx-cursor: hand;" text="Voltar à Tela de Pesquisa" />
+      <Button fx:id="criarPlaylistButton" layoutX="42.0" layoutY="341.0" mnemonicParsing="false" onAction="#criarPlaylist" prefHeight="35.0" prefWidth="212.0" style="-fx-cursor: hand;" text="Criar Playlist" />
+      <TextField fx:id="novaPlaylistTextField" layoutX="14.0" layoutY="293.0" prefHeight="25.0" prefWidth="268.0" promptText="Digite..." style="-fx-background-color: ecd6dd;" />
+      <TextField fx:id="deletarTextField" layoutX="14.0" layoutY="177.0" prefHeight="25.0" prefWidth="268.0" promptText="Digite..." style="-fx-background-color: ecd6dd;" />
+      <Button fx:id="deletarButton" layoutX="42.0" layoutY="226.0" mnemonicParsing="false" onAction="#deletar" prefHeight="35.0" prefWidth="212.0" style="-fx-cursor: hand;" text="Deletar Playlist" />
+      <TextField fx:id="gerenciarTextField" layoutX="14.0" layoutY="60.0" prefHeight="25.0" prefWidth="268.0" promptText="Digite..." style="-fx-background-color: ecd6dd;" />
+      <Button fx:id="gerenciarBotao" layoutX="37.0" layoutY="110.0" mnemonicParsing="false" onAction="#gerenciarPlaylist" prefHeight="35.0" prefWidth="222.0" style="-fx-cursor: hand;" text="Gerenciar Playlist" />
    </children>
 </Pane>
