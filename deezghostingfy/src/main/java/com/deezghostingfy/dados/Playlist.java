@@ -9,12 +9,14 @@ public class Playlist {
     private ArrayList<Video> videos;
 
     public Playlist(String nome) {
+        this.videos = new ArrayList<Video>();
         this.nome = nome;
         this.capa = null;
     }
 
     protected void defineCapa() {
-        this.capa = videos.get(0).getThumb();
+        if (this.videos.size() > 0)
+            this.capa = videos.get(0).getThumb();
     }
 
     public String getCapa() {
@@ -50,6 +52,10 @@ public class Playlist {
         }
 
         return removeu;
+    }
+
+    public int size() {
+        return this.videos.size();
     }
 
     public int getIndex(String titulo) {

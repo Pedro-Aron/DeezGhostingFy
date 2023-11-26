@@ -53,8 +53,11 @@ public class ControladoraTelaPlaylists implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        HBox[] listaHBox = ControladoraTelaPlaylists.geraListaHbox();
-        playlistsListView.getItems().addAll(listaHBox);
+        if (Sessao.acessarPlaylists().size() > 0) {
+            HBox[] listaHBox = ControladoraTelaPlaylists.geraListaHbox();
+            playlistsListView.getItems().addAll(listaHBox);
+        }
+        
 
         playlistsListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<HBox>() {
 
@@ -92,6 +95,12 @@ public class ControladoraTelaPlaylists implements Initializable {
 
     @FXML
     void voltarPesquisa(ActionEvent event) {
+        if (Sessao.acessarPlaylists().size() > 0) {
+            HBox[] listaHBox = geraListaHbox();
+            playlistsListView.getItems().clear();
+            playlistsListView.getItems().addAll(listaHBox);
+        }
+
         try {
             App.setRoot("telaPesquisaFXML");
         } catch (IOException e) {
@@ -125,6 +134,10 @@ public class ControladoraTelaPlaylists implements Initializable {
 
            playlists.add(playlist); 
         }
+
+        Playlist curtidas = Sessao.acessarMusicasCurtidas();
+        if (curtidas.size() > 0)
+            playlists.add(curtidas);
 
         HBox[] listaHBox = new HBox[playlists.size()];
         for (int i = 0; i < playlists.size(); i++) {
