@@ -40,7 +40,7 @@ public class ControladoraTelaVideo implements Initializable {
     private WebView videoView;
 
     @Override public void initialize(URL arg0, ResourceBundle arg1) {
-        playlistCaixaSelecao.getItems().addAll(Sessao.listaDeNomes());
+        //playlistCaixaSelecao.getItems().addAll(Sessao.listaDeNomes());
         WebEngine engine = videoView.getEngine();
         engine.load(videoAtual.getLink());
     }
