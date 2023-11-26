@@ -21,15 +21,15 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <TextField fx:id="pesquisaTextField" layoutX="13.0" layoutY="222.0" prefHeight="25.0" prefWidth="267.0" promptText="Digite o nome da música" style="-fx-background-color: ecd6dd;">
+      <TextField fx:id="pesquisaTextField" layoutX="13.0" layoutY="222.0" prefHeight="25.0" prefWidth="267.0" promptText="Digite o nome da música" style="-fx-background-color: ecd6dd; -fx-cursor: hand;">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font></TextField>
-      <Button fx:id="pesquisarButton" layoutX="6.0" layoutY="268.0" mnemonicParsing="false" onAction="#pesquisar" prefHeight="48.0" prefWidth="281.0" stylesheets="@Style/css/style.css" text="PESQUISAR" textFill="WHITE">
+      <Button fx:id="pesquisarButton" layoutX="6.0" layoutY="268.0" mnemonicParsing="false" onAction="#pesquisar" prefHeight="48.0" prefWidth="281.0" style="-fx-cursor: hand;" stylesheets="@Style/css/style.css" text="PESQUISAR" textFill="WHITE">
          <font>
             <Font name="Century Gothic" size="16.0" />
          </font></Button>
-      <Button fx:id="playlistsButton" layoutX="6.0" layoutY="335.0" mnemonicParsing="false" onAction="#acessarPlaylists" prefHeight="48.0" prefWidth="281.0" stylesheets="@Style/css/style.css" text="PLAYLISTS" textFill="WHITE">
+      <Button fx:id="playlistsButton" layoutX="6.0" layoutY="335.0" mnemonicParsing="false" onAction="#acessarPlaylists" prefHeight="48.0" prefWidth="281.0" style="-fx-cursor: hand;" stylesheets="@Style/css/style.css" text="PLAYLISTS" textFill="WHITE">
          <font>
             <Font name="Century Gothic" size="16.0" />
          </font></Button>

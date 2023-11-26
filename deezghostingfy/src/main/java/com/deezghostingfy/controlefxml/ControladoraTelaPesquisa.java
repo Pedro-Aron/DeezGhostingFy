@@ -48,7 +48,7 @@ public class ControladoraTelaPesquisa implements Initializable {
                 ControladoraTelaVideo.EncontraVideoAtual(tituloSelecionado.getText());
 
                 try {
-                    App.redimensiona(330, 396);
+                    App.redimensiona(750, 450);
                     App.setRoot("telaVideoFXML");
                 } catch (Exception e) {
                     System.out.println("erro pesquisa");

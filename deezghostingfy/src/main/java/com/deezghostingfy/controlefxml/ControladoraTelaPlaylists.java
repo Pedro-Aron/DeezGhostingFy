@@ -65,7 +65,7 @@ public class ControladoraTelaPlaylists implements Initializable {
                 selecionado = playlistsListView.getSelectionModel().getSelectedItem();
                 Label tituloSelecionado = (Label) selecionado.getChildren().get(1);
                 ControladoraTelaTocaPlaylist.EncontraPlaylistAtual(tituloSelecionado.getText());
-                App.redimensiona(840, 450);
+                App.redimensiona(750, 450);
 
                 try {
                     App.setRoot("telaTocaPlaylistFXML");
