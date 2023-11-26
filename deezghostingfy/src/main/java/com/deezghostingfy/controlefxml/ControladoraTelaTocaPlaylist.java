@@ -60,6 +60,7 @@ public class ControladoraTelaTocaPlaylist implements Initializable {
                 selecionado = playlistTocandoListView.getSelectionModel().getSelectedItem();
                 String titulo = ((Label) selecionado.getChildren().get(1)).getText();
 
+                tituloLabel.setText(titulo);
                 musicaAtual = playlistAtual.getIndex(titulo);
                 WebEngine engine = musicaWebView.getEngine();
                 engine.load(playlistAtual.get(musicaAtual).getLink());
@@ -76,20 +77,23 @@ public class ControladoraTelaTocaPlaylist implements Initializable {
     void iniciar(ActionEvent event) {
         WebEngine engine = musicaWebView.getEngine();
         engine.load(playlistAtual.get(musicaAtual).getLink());
+        tituloLabel.setText(playlistAtual.get(musicaAtual).getTitulo());
     }
 
     @FXML
     void tocarAnterior(ActionEvent event) {
         musicaAtual--;
         WebEngine engine = musicaWebView.getEngine();
-        engine.load(playlistAtual.get(musicaAtual).getLink());        
+        engine.load(playlistAtual.get(musicaAtual).getLink());      
+        tituloLabel.setText(playlistAtual.get(musicaAtual).getTitulo());
     }
 
     @FXML
     void tocarProxima(ActionEvent event) {
         musicaAtual++;
         WebEngine engine = musicaWebView.getEngine();
-        engine.load(playlistAtual.get(musicaAtual).getLink());    
+        engine.load(playlistAtual.get(musicaAtual).getLink());
+        tituloLabel.setText(playlistAtual.get(musicaAtual).getTitulo());    
     }
 
     @FXML

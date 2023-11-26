@@ -39,7 +39,6 @@ public class ControladoraTelaPesquisa implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        resultadoPesquisaListView.getItems().clear();
 
         resultadoPesquisaListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<HBox>() {
 

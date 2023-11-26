@@ -12,7 +12,7 @@ public class Video {
     }
 
     public String getLink() {
-        return "https://www.youtube.com/embed/"+this.id;
+        return "https://www.youtube.com/embed/"+this.id+"?autoplay=1";
     }
 
     public String getThumb() {
