@@ -4,13 +4,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Sessao {
-    private static ArrayList<Playlist> playlists;
-    private static MusicasCurtidas musicasCurtidas;
+    private static ArrayList<Playlist> playlists = new ArrayList<Playlist>();
+    private static MusicasCurtidas musicasCurtidas = new MusicasCurtidas();
 
-    public static void inicializa() {
-        playlists = new ArrayList<Playlist>();
-        musicasCurtidas = new MusicasCurtidas();
-    }
+
 
     public static ArrayList<Playlist> acessarPlaylists() {
         return playlists;

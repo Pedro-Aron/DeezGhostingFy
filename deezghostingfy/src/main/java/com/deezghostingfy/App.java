@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import com.deezghostingfy.dados.Sessao;
 import com.deezghostingfy.pesquisa.Pesquisa;
 
 /**

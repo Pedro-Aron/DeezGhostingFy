@@ -51,9 +51,10 @@ public class ControladoraTelaPesquisa implements Initializable {
                 try {
                     App.redimensiona(330, 396);
                     App.setRoot("telaVideoFXML");
-                } catch (IOException e) {
+                } catch (Exception e) {
                     System.out.println("erro pesquisa");
                     System.out.println(e.getMessage());
+                    System.out.println(e.getStackTrace());
                     System.out.println(e.getStackTrace());
                 }
             }   

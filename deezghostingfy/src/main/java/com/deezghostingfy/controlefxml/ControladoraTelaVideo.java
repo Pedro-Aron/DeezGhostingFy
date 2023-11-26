@@ -40,7 +40,9 @@ public class ControladoraTelaVideo implements Initializable {
     private WebView videoView;
 
     @Override public void initialize(URL arg0, ResourceBundle arg1) {
-        //playlistCaixaSelecao.getItems().addAll(Sessao.listaDeNomes());
+        if (Sessao.acessarPlaylists().size() > 0)
+            playlistCaixaSelecao.getItems().addAll(Sessao.listaDeNomes());
+
         WebEngine engine = videoView.getEngine();
         engine.load(videoAtual.getLink());
     }
@@ -54,7 +56,9 @@ public class ControladoraTelaVideo implements Initializable {
     @FXML
     void atualizar(ActionEvent event) {
         playlistCaixaSelecao.getItems().clear();
-        playlistCaixaSelecao.getItems().addAll(Sessao.listaDeNomes());
+
+        if (Sessao.acessarPlaylists().size() > 0)
+            playlistCaixaSelecao.getItems().addAll(Sessao.listaDeNomes());
     }
 
     @FXML
