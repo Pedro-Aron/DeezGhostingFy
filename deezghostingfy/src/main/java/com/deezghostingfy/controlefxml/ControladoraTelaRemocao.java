@@ -22,6 +22,7 @@ import com.deezghostingfy.dados.Sessao;
 import com.deezghostingfy.dados.Video;
 import com.deezghostingfy.App;
 
+import com.deezghostingfy.dados.Conexao.Connection;
 
 public class ControladoraTelaRemocao implements Initializable {
     private static Playlist playlistAtual;

@@ -25,6 +25,10 @@ public class Playlist {
         return this.capa;
     }
 
+    public void removeCapa() {
+        this.capa = null;
+    }
+
     public void addVideo(Video video) {
         this.videos.add(video);
     }

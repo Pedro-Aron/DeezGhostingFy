@@ -56,7 +56,15 @@ public class Sessao {
             if (pL.getNome().toLowerCase().contains(playlist.toLowerCase())) 
                 pl = pL;
         
-        return pl.removerMusica(musica);
+        boolean res = pl.removerMusica(musica);
+        
+        Connection conexao = new Connection();
+        conexao.atualizaBancoDados(pl);
+
+        if (pl.acessarLista().size() == 0) 
+            pl.removeCapa();
+        
+        return res;
     }
 
     // mesmo sobre o metodo acime
