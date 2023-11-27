@@ -70,45 +70,6 @@ public class App extends Application {
             System.out.println("banco de dados vazio");
         }
 
-        
-
-        //Playlist p = new Playlist("penis");
-
-        //MongoClientURI connectionString = new MongoClientURI("mongodb://localhost:27017");
-        //MongoClient mongoClient = new MongoClient(connectionString);
-        //CodecRegistry pojoCodecRegistry = org.bson.codecs.configuration.CodecRegistries.fromRegistries(MongoClientSettings.getDefaultCodecRegistry(), org.bson.codecs.configuration.CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build()));
-        //MongoDatabase database = mongoClient.getDatabase("mongodbjava").withCodecRegistry(pojoCodecRegistry);  
-
-        //MongoClient mongoClient = new MongoClient( "localhost" , 27017 ); 
-        //MongoDatabase db = mongoClient.getDatabase("mongodbjava");
-
-		//Inserting sample record by creating collection and document.
-		//MongoCollection<org.bson.Document>  collection= database.getCollection("javaprogram");
-		//org.bson.Document doc =(org.bson.Document) new org.bson.Document("teste1", array);
-        
-        //MongoCollection<Playlist>  collection= database.getCollection("javaprogram", Playlist.class);
-		//collection.drop(); 
-
-        
-        //doc.append("campo", "sexo");
-		//collection.insertOne(p);
-        //collection.insertOne(t1);
-        //doc =(org.bson.Document) new org.bson.Document("name2","hello");
-		//collection.insertOne(doc);
-        //doc =(org.bson.Document) new org.bson.Document("name3","sexo");
-        //collection.insertOne(doc);
-
-        //System.out.println("---------------------------------------");
-        //for(Teste a: collection.find()) {
-        //    System.out.println(a.getDescricao());
-        //}
-       
-
-        //Atualizando um objeto
-//        collection.updateOne(new Document("_id", 1), set("descricao", "Arroz Parbolizado"));
-
-        //Deletando um objeto
-//        collection.deleteOne(new Document("descricao", "  Parbolizado"));
         launch();
     }
 

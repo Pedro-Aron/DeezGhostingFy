@@ -42,6 +42,6 @@ public class Connection {
     }
 
     public void atualizaBancoDados(Playlist p) {
-        collection.updateOne(Filters.eq("nome", "musicas"), Updates.set("videos", p.acessarLista()));
+        collection.updateOne(Filters.eq("nome",p.getNome()), Updates.set("videos", p.acessarLista()));
     }
 }

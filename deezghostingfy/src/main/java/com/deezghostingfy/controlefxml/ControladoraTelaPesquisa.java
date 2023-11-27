@@ -101,7 +101,7 @@ public class ControladoraTelaPesquisa implements Initializable {
             caixaVideo.setPrefHeight(135);
             caixaVideo.setPrefWidth(411);
 
-            ImageView thumbnail = new ImageView(videos.get(i).getThumb());
+            ImageView thumbnail = new ImageView(videos.get(i).getLinkThumb());
             thumbnail.setFitHeight(99);
             thumbnail.setFitWidth(176);
 

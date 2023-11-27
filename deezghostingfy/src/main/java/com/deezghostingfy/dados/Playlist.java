@@ -18,7 +18,7 @@ public class Playlist {
 
     protected void defineCapa() {
         if (this.videos.size() > 0)
-            this.capa = videos.get(0).getThumb();
+            this.capa = videos.get(0).getLinkThumb();
     }
 
     public String getCapa() {
