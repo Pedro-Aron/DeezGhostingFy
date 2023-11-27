@@ -25,8 +25,11 @@ public class Playlist {
         return this.capa;
     }
 
-    public void removeCapa() {
-        this.capa = null;
+    public void atualizaCapa() {
+        if (this.videos.size() == 0)
+            this.capa = null;
+        else
+            this.capa = videos.get(0).getLinkThumb();
     }
 
     public void addVideo(Video video) {

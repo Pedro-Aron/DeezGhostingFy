@@ -57,12 +57,10 @@ public class Sessao {
                 pl = pL;
         
         boolean res = pl.removerMusica(musica);
+        pl.atualizaCapa();
         
         Connection conexao = new Connection();
         conexao.atualizaBancoDados(pl);
-
-        if (pl.acessarLista().size() == 0) 
-            pl.removeCapa();
         
         return res;
     }
