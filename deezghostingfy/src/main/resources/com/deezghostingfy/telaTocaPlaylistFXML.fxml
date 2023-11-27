@@ -4,28 +4,63 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deezghostingfy.controlefxml.ControladoraTelaTocaPlaylist">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="840.0" styleClass="backgroundColor" stylesheets="@Style/css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deezghostingfy.controlefxml.ControladoraTelaTocaPlaylist">
    <children>
       <ScrollPane layoutX="386.0" layoutY="14.0" prefHeight="423.0" prefWidth="440.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <ListView fx:id="playlistTocandoListView" prefHeight="423.0" prefWidth="440.0" />
+                  <ListView fx:id="playlistTocandoListView" prefHeight="423.0" prefWidth="440.0" styleClass="backgroundColor" />
                </children>
             </AnchorPane>
         </content>
       </ScrollPane>
       <WebView fx:id="musicaWebView" layoutX="34.0" layoutY="14.0" prefHeight="180.0" prefWidth="320.0" />
-      <Button fx:id="iniciarButton" layoutX="34.0" layoutY="259.0" mnemonicParsing="false" onAction="#iniciar" prefHeight="25.0" prefWidth="320.0" text="Iniciar" />
-      <Button fx:id="anteriorButton" layoutX="34.0" layoutY="296.0" mnemonicParsing="false" onAction="#tocarAnterior" prefHeight="25.0" prefWidth="150.0" text="Anterior" />
-      <Button fx:id="proximaButton" layoutX="204.0" layoutY="296.0" mnemonicParsing="false" onAction="#tocarProxima" prefHeight="25.0" prefWidth="150.0" text="Próxima" />
-      <Button fx:id="curtirButton" layoutX="34.0" layoutY="332.0" mnemonicParsing="false" onAction="#curtir" prefHeight="25.0" prefWidth="320.0" text="Curtir" />
-      <Button fx:id="voltarButton" layoutX="34.0" layoutY="411.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="320.0" text="Voltar à Tela de Playlists" />
-      <Label fx:id="tituloLabel" alignment="CENTER" layoutX="34.0" layoutY="208.0" prefHeight="17.0" prefWidth="320.0" text="Titulo" />
+      <Button fx:id="iniciarButton" layoutX="154.0" layoutY="259.0" mnemonicParsing="false" onAction="#iniciar" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: ecd6dd; -fx-cursor: hand;" />
+      <Button fx:id="anteriorButton" layoutX="76.0" layoutY="274.0" mnemonicParsing="false" onAction="#tocarAnterior" opacity="0.0" prefHeight="50.0" prefWidth="50.0" style="-fx-cursor: hand;" />
+      <Button fx:id="proximaButton" layoutX="260.0" layoutY="274.0" mnemonicParsing="false" onAction="#tocarProxima" opacity="0.0" prefHeight="50.0" prefWidth="50.0" style="-fx-cursor: hand;" />
+      <Button fx:id="curtirButton" layoutX="329.0" layoutY="392.0" mnemonicParsing="false" onAction="#curtir" opacity="0.0" prefHeight="50.0" prefWidth="50.0" style="-fx-cursor: hand;" />
+      <Button fx:id="voltarButton" layoutX="9.0" layoutY="392.0" mnemonicParsing="false" onAction="#voltar" opacity="0.0" prefHeight="50.0" prefWidth="50.0" style="-fx-cursor: hand;" />
+      <Label fx:id="tituloLabel" alignment="CENTER" layoutX="34.0" layoutY="208.0" prefHeight="36.0" prefWidth="320.0" text="Titulo">
+         <font>
+            <Font name="Century Gothic Bold" size="15.0" />
+         </font></Label>
+      <ImageView disable="true" fitHeight="50.0" fitWidth="50.0" layoutX="76.0" layoutY="274.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Style/imagens/icone_musica_anterior.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="50.0" fitWidth="50.0" layoutX="260.0" layoutY="274.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Style/imagens/icone_proxima_musica.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="50.0" fitWidth="50.0" layoutX="9.0" layoutY="392.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Style/imagens/icone_retornar.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="50.0" fitWidth="50.0" layoutX="329.0" layoutY="392.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Style/imagens/icone_curtir.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="90.0" fitWidth="90.0" layoutX="149.0" layoutY="254.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Style/imagens/icone_enfeite_musica.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="50.0" fitWidth="50.0" layoutX="169.0" layoutY="274.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Style/imagens/icone_reproduzir.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

@@ -21,21 +21,31 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <TextField fx:id="pesquisaTextField" layoutX="13.0" layoutY="222.0" prefHeight="25.0" prefWidth="267.0" promptText="Digite o nome da música" style="-fx-background-color: ecd6dd; -fx-cursor: hand;">
+      <TextField fx:id="pesquisaTextField" layoutX="13.0" layoutY="222.0" prefHeight="79.0" prefWidth="232.0" promptText="Digite o nome da música" style="-fx-background-color: ecd6dd; -fx-cursor: hand;">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font></TextField>
-      <Button fx:id="pesquisarButton" layoutX="6.0" layoutY="268.0" mnemonicParsing="false" onAction="#pesquisar" prefHeight="48.0" prefWidth="281.0" style="-fx-cursor: hand;" stylesheets="@Style/css/style.css" text="PESQUISAR" textFill="WHITE">
+      <Button fx:id="pesquisarButton" layoutX="255.0" layoutY="216.0" mnemonicParsing="false" onAction="#pesquisar" opacity="0.0" prefHeight="30.0" prefWidth="30.0" style="-fx-cursor: hand;" stylesheets="@Style/css/style.css" textFill="WHITE">
          <font>
             <Font name="Century Gothic" size="16.0" />
          </font></Button>
-      <Button fx:id="playlistsButton" layoutX="6.0" layoutY="335.0" mnemonicParsing="false" onAction="#acessarPlaylists" prefHeight="48.0" prefWidth="281.0" style="-fx-cursor: hand;" stylesheets="@Style/css/style.css" text="PLAYLISTS" textFill="WHITE">
+      <Button fx:id="playlistsButton" layoutX="255.0" layoutY="262.0" mnemonicParsing="false" onAction="#acessarPlaylists" prefHeight="30.0" prefWidth="30.0" style="-fx-cursor: hand;" stylesheets="@Style/css/style.css" textFill="WHITE">
          <font>
             <Font name="Century Gothic" size="16.0" />
          </font></Button>
       <ImageView fitHeight="208.0" fitWidth="233.0" layoutX="39.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Style/imagens/logo.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="30.0" fitWidth="30.0" layoutX="255.0" layoutY="226.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Style/imagens/icone_lupa.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="30.0" fitWidth="30.0" layoutX="255.0" layoutY="273.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Style/imagens/icone_minha_playlist.png" />
          </image>
       </ImageView>
    </children>

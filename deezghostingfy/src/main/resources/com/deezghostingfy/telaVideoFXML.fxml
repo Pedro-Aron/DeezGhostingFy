@@ -3,17 +3,46 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="396.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deezghostingfy.controlefxml.ControladoraTelaVideo">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" styleClass="backgroundColor" stylesheets="@Style/css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deezghostingfy.controlefxml.ControladoraTelaVideo">
    <children>
-      <WebView fx:id="videoView" layoutX="5.0" layoutY="6.0" prefHeight="180.0" prefWidth="320.0" />
-      <Button fx:id="botaoCurtir" layoutX="5.0" layoutY="231.0" mnemonicParsing="false" onAction="#curtir" prefHeight="25.0" prefWidth="320.0" text="Curtir" />
-      <Button fx:id="voltarBotao" layoutX="5.0" layoutY="357.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="320.0" text="Voltar à tela de pesquisa" />
-      <Button fx:id="adicionarPlaylistBotao" layoutX="5.0" layoutY="311.0" mnemonicParsing="false" onAction="#adicionarPlaylist" prefHeight="25.0" prefWidth="320.0" text="Adicionar à playlist" />
-      <ChoiceBox fx:id="playlistCaixaSelecao" layoutX="5.0" layoutY="280.0" prefHeight="25.0" prefWidth="320.0" />
-      <Button fx:id="atualizarBotao" layoutX="5.0" layoutY="198.0" mnemonicParsing="false" onAction="#atualizar" prefHeight="25.0" prefWidth="320.0" text="Atualizar Playlists" />
+      <WebView fx:id="videoView" layoutX="23.0" layoutY="53.0" prefHeight="312.0" prefWidth="705.0" />
+      <Button fx:id="botaoCurtir" layoutX="23.0" layoutY="372.0" mnemonicParsing="false" onAction="#curtir" opacity="0.0" prefHeight="50.0" prefWidth="50.0" style="-fx-cursor: hand;" stylesheets="@Style/css/style.css" />
+      <Button fx:id="voltarBotao" layoutX="694.0" layoutY="404.0" mnemonicParsing="false" onAction="#voltar" opacity="0.0" prefHeight="20.0" prefWidth="21.0" style="-fx-cursor: hand;" stylesheets="@Style/css/style.css" />
+      <Button fx:id="adicionarPlaylistBotao" layoutX="73.0" layoutY="372.0" mnemonicParsing="false" onAction="#adicionarPlaylist" opacity="0.0" prefHeight="50.0" prefWidth="50.0" style="-fx-cursor: hand;" stylesheets="@Style/css/style.css" />
+      <ChoiceBox fx:id="playlistCaixaSelecao" layoutX="182.0" layoutY="372.0" prefHeight="25.0" prefWidth="545.0" style="-fx-background-color: ecd6dd;" />
+      <Button fx:id="atualizarBotao" layoutX="123.0" layoutY="372.0" mnemonicParsing="false" onAction="#atualizar" opacity="0.0" prefHeight="50.0" prefWidth="50.0" style="-fx-cursor: hand;" />
+      <ImageView disable="true" fitHeight="20.0" fitWidth="20.0" layoutX="700.0" layoutY="412.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+         <image>
+            <Image url="@Style/imagens/icone_retornar.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="50.0" fitWidth="50.0" layoutX="23.0" layoutY="372.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Style/imagens/icone_curtir.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="50.0" fitWidth="50.0" layoutX="73.0" layoutY="372.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Style/imagens/icone_adicionar_playlist.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="50.0" fitWidth="50.0" layoutX="123.0" layoutY="371.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Style/imagens/icone_atualizar_playlist.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="221.0" prefHeight="17.0" prefWidth="309.0" styleClass="texto" stylesheets="@Style/css/style.css" text="DeezGhostingFy">
+         <font>
+            <Font name="Century Gothic Bold Italic" size="34.0" />
+         </font>
+      </Label>
    </children>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

@@ -3,6 +3,7 @@
 }
 
 .button {
+    -fx-opacity: 0;
     -fx-background-color: linear-gradient(to left bottom, #a43f5c, #430013);
     -fx-font-veight: bold;
     -fx-background-radius: 22;
@@ -19,6 +20,7 @@
     -fx-border-color: #470417;
     -fx-border-radius: 20;
     -fx-border-width: 3;
+    -fx-opacity: 0.8;
 
 }
 
@@ -32,4 +34,8 @@
     -fx-border-radius: 20;
     -fx-border-width: 3;
     -fx-witdh: 100;
+}
+
+.texto {
+    -fx-text-fill: linear-gradient(to left bottom, #28000b, #764f5b);
 }
