@@ -8,6 +8,8 @@ public class Playlist {
     private String capa;
     private ArrayList<Video> videos;
 
+    public Playlist(){}
+
     public Playlist(String nome) {
         this.videos = new ArrayList<Video>();
         this.nome = nome;
@@ -65,4 +67,24 @@ public class Playlist {
 
         return -1;
     }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCapa(String capa) {
+        this.capa = capa;
+    }
+
+    public ArrayList<Video> getVideos() {
+        return videos;
+    }
+
+    public void setVideos(ArrayList<Video> videos) {
+        this.videos = videos;
+    }
+
+
+    
+    
 }

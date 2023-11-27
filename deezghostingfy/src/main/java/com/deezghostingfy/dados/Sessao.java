@@ -3,11 +3,11 @@ package com.deezghostingfy.dados;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import com.deezghostingfy.dados.Conexao.Connection;
+
 public class Sessao {
     private static ArrayList<Playlist> playlists = new ArrayList<Playlist>();
     private static MusicasCurtidas musicasCurtidas = new MusicasCurtidas();
-
-
 
     public static ArrayList<Playlist> acessarPlaylists() {
         return playlists;
@@ -18,8 +18,16 @@ public class Sessao {
     }
 
     public static void addPlaylist(String nome) {
-        playlists.add(new Playlist(nome));
+        Playlist p = new Playlist(nome);
+        playlists.add(p);
     }
+
+    public static void addPlaylist(Playlist p) {
+        Connection con = new Connection();
+        con.adicionaPlaylistBancoDeDados(p);
+
+        playlists.add(p);
+    }   
 
     public static void defineCapaPlaylists() {
         for (var playlist: playlists) 
@@ -80,5 +88,14 @@ public class Sessao {
                 pl.addVideo(musica);
                 break;
             }
+    }
+
+    public static Playlist getPlaylist(String nome) {
+        for(Playlist p : playlists) {
+            if(p.getNome().equals(nome))
+                return p;
+                
+        }
+        return null;
     }
 }

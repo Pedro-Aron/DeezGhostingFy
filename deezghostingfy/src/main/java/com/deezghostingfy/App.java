@@ -14,12 +14,16 @@ import org.bson.Document;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
 
+import com.deezghostingfy.dados.Playlist;
 import com.deezghostingfy.dados.Sessao;
+import com.deezghostingfy.dados.Video;
+import com.deezghostingfy.dados.Conexao.Connection;
 import com.deezghostingfy.pesquisa.Pesquisa;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoClientURI;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
@@ -56,17 +60,24 @@ public class App extends Application {
     }
 
     public static void main(String[] args) throws IOException {
-        ArrayList<Teste> array = new ArrayList<>();
-        Teste t1 = new Teste();
-        t1.setId(1);
-        t1.setDescricao("aaaaaa");
-        t1.setPreco(213);
-        array.add(t1);
+        
+        Connection conector = new Connection();
 
-        MongoClientURI connectionString = new MongoClientURI("mongodb://localhost:27017");
-        MongoClient mongoClient = new MongoClient(connectionString);
-        CodecRegistry pojoCodecRegistry = org.bson.codecs.configuration.CodecRegistries.fromRegistries(MongoClientSettings.getDefaultCodecRegistry(), org.bson.codecs.configuration.CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build()));
-        MongoDatabase database = mongoClient.getDatabase("mongodbjava").withCodecRegistry(pojoCodecRegistry);  
+        if(conector.verificaBancoDeDados().iterator().hasNext()) {
+            for(Playlist a : conector.verificaBancoDeDados()) 
+                Sessao.addPlaylist(a);   
+        }else {
+            System.out.println("banco de dados vazio");
+        }
+
+        
+
+        //Playlist p = new Playlist("penis");
+
+        //MongoClientURI connectionString = new MongoClientURI("mongodb://localhost:27017");
+        //MongoClient mongoClient = new MongoClient(connectionString);
+        //CodecRegistry pojoCodecRegistry = org.bson.codecs.configuration.CodecRegistries.fromRegistries(MongoClientSettings.getDefaultCodecRegistry(), org.bson.codecs.configuration.CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build()));
+        //MongoDatabase database = mongoClient.getDatabase("mongodbjava").withCodecRegistry(pojoCodecRegistry);  
 
         //MongoClient mongoClient = new MongoClient( "localhost" , 27017 ); 
         //MongoDatabase db = mongoClient.getDatabase("mongodbjava");
@@ -75,22 +86,22 @@ public class App extends Application {
 		//MongoCollection<org.bson.Document>  collection= database.getCollection("javaprogram");
 		//org.bson.Document doc =(org.bson.Document) new org.bson.Document("teste1", array);
         
-        MongoCollection<Teste>  collection= database.getCollection("javaprogram", Teste.class);
-		collection.drop(); 
+        //MongoCollection<Playlist>  collection= database.getCollection("javaprogram", Playlist.class);
+		//collection.drop(); 
 
         
         //doc.append("campo", "sexo");
-		collection.insertOne(t1);
+		//collection.insertOne(p);
         //collection.insertOne(t1);
         //doc =(org.bson.Document) new org.bson.Document("name2","hello");
 		//collection.insertOne(doc);
         //doc =(org.bson.Document) new org.bson.Document("name3","sexo");
         //collection.insertOne(doc);
 
-        System.out.println("---------------------------------------");
-        for(Teste a: collection.find()) {
-            System.out.println(a.getDescricao());
-        }
+        //System.out.println("---------------------------------------");
+        //for(Teste a: collection.find()) {
+        //    System.out.println(a.getDescricao());
+        //}
        
 
         //Atualizando um objeto
@@ -98,7 +109,7 @@ public class App extends Application {
 
         //Deletando um objeto
 //        collection.deleteOne(new Document("descricao", "  Parbolizado"));
-        //launch();
+        launch();
     }
 
 }

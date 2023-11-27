@@ -14,6 +14,7 @@ import java.net.URL;
 
 import com.deezghostingfy.App;
 import com.deezghostingfy.dados.Video;
+import com.deezghostingfy.dados.Conexao.Connection;
 import com.deezghostingfy.pesquisa.Pesquisa;
 import com.deezghostingfy.dados.Sessao;
 
@@ -65,6 +66,10 @@ public class ControladoraTelaVideo implements Initializable {
     void adicionarPlaylist(ActionEvent event) {
         String playlist = playlistCaixaSelecao.getValue();
         Sessao.adicionarMusica(playlist, videoAtual);
+
+        Connection conexao = new Connection();
+        conexao.atualizaBancoDados(Sessao.getPlaylist(playlist));
+
     }
 
     @FXML

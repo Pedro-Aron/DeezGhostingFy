@@ -21,6 +21,7 @@ import java.io.IOException;
 
 import com.deezghostingfy.App;
 import com.deezghostingfy.dados.Sessao;
+import com.deezghostingfy.dados.Conexao.Connection;
 import com.deezghostingfy.dados.Playlist;
 
 public class ControladoraTelaPlaylists implements Initializable {
@@ -89,8 +90,7 @@ public class ControladoraTelaPlaylists implements Initializable {
 
     @FXML
     void criarPlaylist(ActionEvent event) {
-        String listaNova = novaPlaylistTextField.getText();
-        Sessao.addPlaylist(listaNova);
+        Sessao.addPlaylist(new Playlist(novaPlaylistTextField.getText()));
     }
 
     @FXML

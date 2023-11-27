@@ -5,6 +5,8 @@ public class Video {
     private String linkThumb;
     private String titulo;
 
+    public Video(){}
+
     public Video(String id, String thumb, String titulo) {
         this.id = id;
         this.linkThumb = thumb;
