@@ -14,7 +14,7 @@ public class Video {
     }
 
     public String getLink() {
-        return "https://www.youtube.com/embed/"+this.link+"?autoplay=1";
+        return this.link;
     }
 
     public String getLinkThumb() {

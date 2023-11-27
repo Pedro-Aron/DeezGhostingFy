@@ -63,7 +63,7 @@ public class ControladoraTelaTocaPlaylist implements Initializable {
                 tituloLabel.setText(titulo);
                 musicaAtual = playlistAtual.getIndex(titulo);
                 WebEngine engine = musicaWebView.getEngine();
-                engine.load(playlistAtual.get(musicaAtual).getLink());
+                engine.load("https://www.youtube.com/embed/"+playlistAtual.get(musicaAtual).getLink()+"?autoplay=1");
             }
         });
     }
@@ -76,7 +76,7 @@ public class ControladoraTelaTocaPlaylist implements Initializable {
     @FXML
     void iniciar(ActionEvent event) {
         WebEngine engine = musicaWebView.getEngine();
-        engine.load(playlistAtual.get(musicaAtual).getLink());
+        engine.load("https://www.youtube.com/embed/"+playlistAtual.get(musicaAtual).getLink()+"?autoplay=1");
         tituloLabel.setText(playlistAtual.get(musicaAtual).getTitulo());
     }
 
@@ -84,7 +84,7 @@ public class ControladoraTelaTocaPlaylist implements Initializable {
     void tocarAnterior(ActionEvent event) {
         musicaAtual--;
         WebEngine engine = musicaWebView.getEngine();
-        engine.load(playlistAtual.get(musicaAtual).getLink());      
+        engine.load("https://www.youtube.com/embed/"+playlistAtual.get(musicaAtual).getLink()+"?autoplay=1");      
         tituloLabel.setText(playlistAtual.get(musicaAtual).getTitulo());
     }
 
@@ -92,7 +92,7 @@ public class ControladoraTelaTocaPlaylist implements Initializable {
     void tocarProxima(ActionEvent event) {
         musicaAtual++;
         WebEngine engine = musicaWebView.getEngine();
-        engine.load(playlistAtual.get(musicaAtual).getLink());
+        engine.load("https://www.youtube.com/embed/"+playlistAtual.get(musicaAtual).getLink()+"?autoplay=1");
         tituloLabel.setText(playlistAtual.get(musicaAtual).getTitulo());    
     }
 

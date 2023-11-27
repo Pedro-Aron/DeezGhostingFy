@@ -90,7 +90,7 @@ public class ControladoraTelaPlaylists implements Initializable {
 
     @FXML
     void criarPlaylist(ActionEvent event) {
-        Sessao.addPlaylist(new Playlist(novaPlaylistTextField.getText()));
+        Sessao.addPlaylistMongo(new Playlist(novaPlaylistTextField.getText()));
     }
 
     @FXML

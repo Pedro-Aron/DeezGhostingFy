@@ -45,7 +45,7 @@ public class ControladoraTelaVideo implements Initializable {
             playlistCaixaSelecao.getItems().addAll(Sessao.listaDeNomes());
 
         WebEngine engine = videoView.getEngine();
-        engine.load(videoAtual.getLink());
+        engine.load("https://www.youtube.com/embed/"+videoAtual.getLink()+"?autoplay=1");
     }
 
     public static void EncontraVideoAtual(String titulo) {

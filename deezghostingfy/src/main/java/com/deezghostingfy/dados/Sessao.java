@@ -23,11 +23,15 @@ public class Sessao {
     }
 
     public static void addPlaylist(Playlist p) {
+        playlists.add(p);
+    }   
+
+    public static void addPlaylistMongo(Playlist p) {
         Connection con = new Connection();
         con.adicionaPlaylistBancoDeDados(p);
 
         playlists.add(p);
-    }   
+    }
 
     public static void defineCapaPlaylists() {
         for (var playlist: playlists) 
