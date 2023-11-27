@@ -63,10 +63,14 @@ public class App extends Application {
         
         Connection conector = new Connection();
 
-        if(conector.verificaBancoDeDados().iterator().hasNext()) {
-            for(Playlist a : conector.verificaBancoDeDados()) 
-                Sessao.addPlaylist(a);   
-        }else {
+        if (conector.verificaBancoDeDados().iterator().hasNext()) {
+            for (Playlist a : conector.verificaBancoDeDados()) {
+                if (a.getNome().equals("Músicas Curtidas"))
+                    Sessao.defineMusicasCurtidas(a);
+                else
+                    Sessao.addPlaylist(a);
+            }        
+        } else {
             System.out.println("banco de dados vazio");
         }
 

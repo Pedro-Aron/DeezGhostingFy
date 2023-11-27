@@ -19,17 +19,12 @@ public class Playlist {
     protected void defineCapa() {
         if (this.videos.size() > 0)
             this.capa = videos.get(0).getLinkThumb();
+        else
+            this.capa = null;
     }
 
     public String getCapa() {
         return this.capa;
-    }
-
-    public void atualizaCapa() {
-        if (this.videos.size() == 0)
-            this.capa = null;
-        else
-            this.capa = videos.get(0).getLinkThumb();
     }
 
     public void addVideo(Video video) {

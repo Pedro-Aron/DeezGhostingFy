@@ -7,7 +7,7 @@ import com.deezghostingfy.dados.Conexao.Connection;
 
 public class Sessao {
     private static ArrayList<Playlist> playlists = new ArrayList<Playlist>();
-    private static MusicasCurtidas musicasCurtidas = new MusicasCurtidas();
+    private static Playlist musicasCurtidas = new Playlist("Músicas Curtidas");
 
     public static ArrayList<Playlist> acessarPlaylists() {
         return playlists;
@@ -34,11 +34,13 @@ public class Sessao {
     }
 
     public static void defineCapaPlaylists() {
+        musicasCurtidas.defineCapa();
+
         for (var playlist: playlists) 
             playlist.defineCapa();
     }
 
-    public static MusicasCurtidas acessarMusicasCurtidas() {
+    public static Playlist acessarMusicasCurtidas() {
         return musicasCurtidas;
     }
 
@@ -57,7 +59,7 @@ public class Sessao {
                 pl = pL;
         
         boolean res = pl.removerMusica(musica);
-        pl.atualizaCapa();
+        pl.defineCapa();
         
         Connection conexao = new Connection();
         conexao.atualizaBancoDados(pl);
@@ -107,5 +109,9 @@ public class Sessao {
                 
         }
         return null;
+    }
+
+    public static void defineMusicasCurtidas(Playlist p) {
+        musicasCurtidas = p;
     }
 }
